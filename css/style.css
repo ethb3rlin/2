@@ -61,7 +61,7 @@ h6 {
 h7 {
     font-family: Arial, Helvetica, sans-serif;
     font-weight: lighter;
-    font-size: 0.9rem;
+    font-size: 0.8rem;
 }
 
 p {
@@ -112,6 +112,7 @@ hr {
     margin-top: 270px;
     position:relative;
     color:black;
+    width: 220px;
 }
 
 .nav-item {
@@ -205,7 +206,7 @@ a:active {
     -o-transition: left 0.1s ease;
     transition: left 0.1s ease;
     background: lightgrey;
-    color: white;
+    color: black;
     cursor: pointer;
     height: 100vh;
     /* this -26rem might be a bit hacky */
