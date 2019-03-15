@@ -8,27 +8,29 @@
     <title>ETHBerlin</title>
     <script type="text/javascript" src="dist/paper-full.js"></script>
     <script type="text/paperscript" canvas="canvas">
-        
+                    
 
-        //stroke red 
-            var triangle = new Path.RegularPolygon(new Point(80, 70), 3, 50);
-            triangle.fillColor = 'blue';
+        //stroke blue 
+        var pathBlue = new Path(new Point(2, 20), new Point(250, 50));
+            pathBlue.style = {
+            strokeColor: 'blue',
+            strokeWidth: 10,
+            strokeCap: 'square'
+        };
 
-           
+        // Create a symbol from the path:
+        var symbol = new Symbol(pathBlue);
 
-            // Create a symbol from the path:
-            var symbol = new Symbol(triangle);
+        // Place 5 instances of the symbol in the project in random
+        // positions in the view:
+        for (var i = 0; i < 5; i++) {
+        var position = view.size * Point.random();
+        var placed = symbol.place(position);
+        }
 
-            // Place 5 instances of the symbol in the project in random
-            // positions in the view:
-            for (var i = 0; i < 5; i++) {
-	        var position = view.size * Point.random();
-	        var placed = symbol.place(position);
-            }
-
-            function onFrame(event) {
-                triangle.rotate(1);
-            }
+        function onFrame(event) {
+            pathBlue.rotate(1);
+        }
             
 
     </script>
@@ -49,15 +51,26 @@
                 </ul>
                 <hr>
         <div class="content">
-                <div class="title"><h6>Hack</h6></div>
-                <h4>Applications launch on April 1st.<br>
-                    Stay tuned via twitter <a href="https://twitter.com/ETHBerlin">@ETHBerlin</a>.
-                    <br>
-                    <br>
-                    We expect all sponsors to accept our
-                     <a href="https://github.com/ethberlin-hackathon/ETHBerlin-KnowledgeBase/blob/master/code-of-conduct.md">Code of Conduct</a></h4>
-                    
                 
+                    
+                <div class="title"><h6>Speak</h6></div>
+                <h4>ETHBerlin sticks to the premise of no pay to play.
+                    All speakers will have equal chances to participate in our conference tracks within dAppcon Berlin (April 21st to 23rd).<br>
+                    Everyone can apply, but we highly encourage hackers to do so,
+                    as some of you have been touring long and have solid things to share with the community.</h4>
+                    
+                <h4>Rules:</h4>
+                <div><h4>
+                        <ul>
+                            <li>Not more than 2 applications per person</li>
+                            <li>No project pitches</li>
+                            <li>Find topics that can be useful for the ecosystem, not only your project!</li>
+                            <li>Applications are only for panels or talks, if applying as a panel, please name ALL the people involved.</li>
+                            <li>Feel free to get a bit crazy and off-topic, we love originality.</li>
+                            
+                        </ul>
+                    </h4>
+                </div>
 
                 <h4>Last but not least: if you sent us a product/project pitch, that means that you skipped reading the rules right above.
                     <br>

@@ -90,12 +90,13 @@
               var x = window.matchMedia("(max-width: 600px)")
               changePatternSmall(x) // Call listener function at run time
               x.addListener(changePatternSmall) // Attach listener function on state changes
+
               // add n of rectangular shapes for bigger screen
               function changePatternBig(y) {
                 if (y.matches) { // If media query matches
                     var shape = new Shape.Rectangle({
                         point: [20, 20],
-                        size: [200, 200],
+                        size: [150, 150],
                         fillColor: 'red'
                     });
                     var symbol = new Symbol(shape);
@@ -210,15 +211,13 @@
 
 </head>
 <body>
-
         <img src="img/mainlogo.svg" id="mainLogo" alt="logo" />
-
-
     <div class="nav-big">
       <h3>
         <ul id="navList">
             <li><a href="about.html">about+FAQs</a></li>
-            <li><a href="hack.html">hack+speak</a></li>
+            <li><a href="hack.html">hack</a></li>
+            <li><a href="speak.html">speak</a></li>
             <li><a href="mailto:joinus@ethberlin.com">team</a></li>
             <li><a href="mailto:joinus@ethberlin.com">sponsor</a></li>
             <li><a href="https://www.dappcon.io/">dAppcon</a></li>
@@ -243,7 +242,8 @@
       <nav class="nav">
         <ul id="navList">
             <li><a href="about.html"><h4>about+FAQs</h4></a></li>
-            <li><a href="hack.html"><h4>hack+speak</h4></a></li>
+            <li><a href="hack.html">hack</a></li>
+            <li><a href="speak.html">speak</a></li>
             <li><a href="mailto:joinus@ethberlin.com"><h4>team</h4></a></li>
             <li><a href="mailto:joinus@ethberlin.com"><h4>sponsor</h4></a></li>
             <li><a href="https://www.dappcon.io/"><h4>dAppcon</h4></a></li>
