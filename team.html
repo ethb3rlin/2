@@ -10,25 +10,28 @@
     <script type="text/paperscript" canvas="canvas">
         
 
-        //stroke red 
-            var triangle = new Path.RegularPolygon(new Point(80, 70), 3, 50);
-            triangle.fillColor = 'blue';
+        //stroke orange 
+        var pathOrange = new Path(new Point(2, 20), new Point(250, 50));
+            pathOrange.style = {
+            strokeColor: 'orange',
+            strokeWidth: 10,
+            strokeCap: 'square'
+        };
 
-           
+        // Create a symbol from the path:
+        var symbol = new Symbol(pathOrange);
 
-            // Create a symbol from the path:
-            var symbol = new Symbol(triangle);
+        // Place 5 instances of the symbol in the project in random
+        // positions in the view:
+        for (var i = 0; i < 5; i++) {
+        var position = view.size * Point.random();
+        var placed = symbol.place(position);
+        }
 
-            // Place 5 instances of the symbol in the project in random
-            // positions in the view:
-            for (var i = 0; i < 5; i++) {
-	        var position = view.size * Point.random();
-	        var placed = symbol.place(position);
-            }
-
-            function onFrame(event) {
-                triangle.rotate(1);
-            }
+        function onFrame(event) {
+            pathOrange.rotate(1);
+        }
+        
             
 
     </script>
