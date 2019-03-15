@@ -8,23 +8,9 @@
     <link rel="stylesheet" href="css/style.css">
     <script type="text/javascript" src="dist/paper-full.js"></script>
     <script type="text/paperscript" canvas="canvas">
-            function onMouseDrag(event) {
-                // The radius is the distance between the position
-                // where the user clicked and the current position
-                // of the mouse.
-                var path = new Path.Circle({
-                    center: event.downPoint,
-                    radius: (event.downPoint - event.point).length,
-                    fillColor: 'blue',
-                   
-                });
-                
-                // Remove this path on the next drag event:
-                path.removeOnDrag();
-            };
+           
 
-            // circles
-            
+        
             function changePatternSmallCircle(x) {
                 if (x.matches) { // If media query matches
                     var circle = new Shape.Circle({
@@ -48,7 +34,6 @@
               x.addListener(changePatternSmallCircle) // Attach listener function on state changes
             
               // add n of rectangular shapes for bigger screen
-
               function changePatternBigCircle(y) {
                 if (y.matches) { // If media query matches
                     var circle = new Shape.Circle({
@@ -80,7 +65,6 @@
                         size: [70, 70],
                         fillColor: 'red'
                     });
-
                     var symbol = new Symbol(shape);
                     for (var i = 0; i < 2; i++) {
                         var position = view.size * Point.random();
@@ -92,9 +76,7 @@
               var x = window.matchMedia("(max-width: 600px)")
               changePatternSmall(x) // Call listener function at run time
               x.addListener(changePatternSmall) // Attach listener function on state changes
-
               // add n of rectangular shapes for bigger screen
-
               function changePatternBig(y) {
                 if (y.matches) { // If media query matches
                     var shape = new Shape.Rectangle({
@@ -102,7 +84,6 @@
                         size: [200, 200],
                         fillColor: 'red'
                     });
-
                     var symbol = new Symbol(shape);
                     for (var i = 0; i < 2; i++) {
                         var position = view.size * Point.random();
@@ -114,21 +95,15 @@
               var y = window.matchMedia("(min-width: 601px)")
               changePatternBig(y) // Call listener function at run time
               y.addListener(changePatternBig) // Attach listener function on state changes
-
-
-
             //stroke blue 1
-
             var pathBlue = new Path(new Point(2, 20), new Point(250, 50));
                 pathBlue.style = {
 	            strokeColor: 'blue',
 	            strokeWidth: 10,
 	            strokeCap: 'square'
             };
-
             // Create a symbol from the path:
             var symbol = new Symbol(pathBlue);
-
             // Place 3 instances of the symbol in the project in random
             // positions in the view:
             for (var i = 0; i < 3; i++) {
@@ -136,9 +111,7 @@
 	        var placed = symbol.place(position);
             }
         
-
             //stroke animation 2
-
             function changePatternSmallYellow(x) {
                 if (x.matches) { // If media query matches
                     var pathYellow = new Path(new Point(2, 5), new Point(250, 730));
@@ -186,8 +159,23 @@
               y.addListener(changePatternBigYellow) // Attach listener function on state changes
 
 
-            
+              // drawing own circles
 
+              function onMouseDrag(event) {
+                // The radius is the distance between the position
+                // where the user clicked and the current position
+                // of the mouse.
+                var path = new Path.Circle({
+                    center: event.downPoint,
+                    radius: (event.downPoint - event.point).length,
+                    fillColor: 'blue',
+                   
+                });
+                
+                // Remove this path on the next drag event:
+                path.removeOnDrag();
+            };
+            
     </script>
     
 </head>
