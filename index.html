@@ -16,15 +16,15 @@
                     center: event.downPoint,
                     radius: (event.downPoint - event.point).length,
                     fillColor: 'blue',
-                   
+
                 });
-                
+
                 // Remove this path on the next drag event:
                 path.removeOnDrag();
             };
 
             // circles
-            
+
             function changePatternSmallCircle(x) {
                 if (x.matches) { // If media query matches
                     var circle = new Shape.Circle({
@@ -33,20 +33,20 @@
                         strokeColor:'black',
                         strokeWidth: 10
                     });
-            
-            
+
+
                     var symbol = new Symbol(circle);
                     for (var i = 0; i < 1; i++) {
                         var position = view.size * Point.random();
                         var placed = symbol.place(position);
                         }
-                } 
+                }
               }
-              
+
               var x = window.matchMedia("(max-width: 600px)")
               changePatternSmallCircle(x) // Call listener function at run time
               x.addListener(changePatternSmallCircle) // Attach listener function on state changes
-            
+
               // add n of rectangular shapes for bigger screen
 
               function changePatternBigCircle(y) {
@@ -57,21 +57,21 @@
                         strokeColor:'black',
                         strokeWidth: 10
                     });
-            
-            
+
+
                     var symbol = new Symbol(circle);
                     for (var i = 0; i < 2; i++) {
                         var position = view.size * Point.random();
                         var placed = symbol.place(position);
                         }
-                } 
+                }
               }
-              
+
               var y = window.matchMedia("(min-width: 601px)")
               changePatternBigCircle(y) // Call listener function at run time
               y.addListener(changePatternBigCircle) // Attach listener function on state changes
-         
-     
+
+
             // reduce n of rectangular shapes for smaller screen
             function changePatternSmall(x) {
                 if (x.matches) { // If media query matches
@@ -85,10 +85,10 @@
                     for (var i = 0; i < 2; i++) {
                         var position = view.size * Point.random();
                         var placed = symbol.place(position);
-                    } 
-                } 
+                    }
+                }
               }
-              
+
               var x = window.matchMedia("(max-width: 600px)")
               changePatternSmall(x) // Call listener function at run time
               x.addListener(changePatternSmall) // Attach listener function on state changes
@@ -107,10 +107,10 @@
                     for (var i = 0; i < 2; i++) {
                         var position = view.size * Point.random();
                         var placed = symbol.place(position);
-                    } 
-                } 
+                    }
+                }
               }
-              
+
               var y = window.matchMedia("(min-width: 601px)")
               changePatternBig(y) // Call listener function at run time
               y.addListener(changePatternBig) // Attach listener function on state changes
@@ -135,7 +135,7 @@
 	        var position = view.size * Point.random();
 	        var placed = symbol.place(position);
             }
-        
+
 
             //stroke animation 2
 
@@ -147,22 +147,22 @@
                     strokeWidth: 30,
                     strokeCap: 'square'
                     };
-            
+
                     var symbol = new Symbol(pathYellow);
-            
+
                     for (var i = 0; i < 2; i++) {
                     var position = view.size * Point.random();
                     var placed = symbol.place(position);
                     }
-                } 
+                }
               }
-              
+
               var x = window.matchMedia("(max-width: 600px)")
               changePatternSmallYellow(x) // Call listener function at run time
               x.addListener(changePatternSmallYellow) // Attach listener function on state changes
-            
+
               // add n of rectangular shapes for bigger screen
-            
+
               function changePatternBigYellow(y) {
                 if (y.matches) { // If media query matches
                     var pathYellow = new Path(new Point(2, 20), new Point(250, 730));
@@ -171,32 +171,48 @@
                     strokeWidth: 70,
                     strokeCap: 'square'
                     };
-            
+
                     var symbol = new Symbol(pathYellow);
-            
+
                     for (var i = 0; i < 2; i++) {
                     var position = view.size * Point.random();
                     var placed = symbol.place(position);
               }
-                } 
+                }
               }
-              
+
               var y = window.matchMedia("(min-width: 601px)")
               changePatternBigYellow(y) // Call listener function at run time
               y.addListener(changePatternBigYellow) // Attach listener function on state changes
 
+              (function() {
+                var hamburger = {
+                  navToggle: document.querySelector('.nav-toggle'),
+                  nav: document.querySelector('nav'),
 
-            
+                  doToggle: function(e) {
+                    e.preventDefault();
+                    this.navToggle.classList.toggle('expanded');
+                    this.nav.classList.toggle('expanded');
+                  }
+                };
+
+                hamburger.navToggle.addEventListener('click', function(e) { hamburger.doToggle(e); });
+                hamburger.nav.addEventListener('click', function(e) { hamburger.doToggle(e); });
+
+              }());
+
 
     </script>
-    
+
 </head>
 <body>
-    
+
         <img src="img/mainlogo.svg" id="mainLogo" alt="logo" />
-    
-    
-    <div class="nav-big"><h3>
+
+
+    <div class="nav-big">
+      <h3>
         <ul id="navList">
             <li><a href="about.html">about+FAQs</a></li>
             <li><a href="hack.html">hack+speak</a></li>
@@ -206,14 +222,35 @@
             <li><a href="https://medium.com/ethberlin">blog</a></li>
             <hr>
         </ul>
-    </h3>
+      </h3>
         <div class="nav-second">
-            <ul id="navList-small">  
+            <ul id="navList-small">
                 <li><h7><a href="https://github.com/Department-of-Decentralization/decentralala.com/blob/master/code-of-conduct.md">code of conduct</a></h7></li>
                 <li><h7><a href="imprint.html">imprint</a></h7></li>
                 <li><h7>design inspired by Bauhaus</a></h7></li>
             </ul>
         </div>
+    </div>
+
+    <div class="nav-mobile">
+      <div class="nav-toggle">
+        <div class="nav-toggle-bar">
+        </div>
+      </div>
+      <nav class="nav">
+        <ul id="navList">
+            <li><a href="about.html">about+FAQs</a></li>
+            <li><a href="hack.html">hack+speak</a></li>
+            <li><a href="mailto:joinus@ethberlin.com">team</a></li>
+            <li><a href="mailto:joinus@ethberlin.com">sponsor</a></li>
+            <li><a href="https://www.dappcon.io/">dAppcon</a></li>
+            <li><a href="https://medium.com/ethberlin">blog</a></li>
+            <hr>
+            <li><h7><a href="https://github.com/Department-of-Decentralization/decentralala.com/blob/master/code-of-conduct.md">code of conduct</a></h7></li>
+            <li><h7><a href="imprint.html">imprint</a></h7></li>
+            <li><h7>design inspired by Bauhaus</a></h7></li>
+        </ul>
+      </nav>
     </div>
 
     <div class="main-subtext">
