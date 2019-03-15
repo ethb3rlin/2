@@ -39,6 +39,7 @@ h4 {
     font-family: Arial, Helvetica, sans-serif;
     font-weight: lighter;
     font-size: 0.9rem;
+    margin-top: 0.2rem;
     
 }
 
@@ -151,23 +152,22 @@ hr {
     text-align: center;
   }
 
-
-.subtext {
-    position: absolute;
-    top: 85%;
-    left: 5%;  
-    line-height: 0.1rem; 
-}
-
-.content {
+  .content {
     margin: 3rem;
     
 }
 
-.instructionText {
+.main-subtext {
     position: absolute;
     top: 85%;
-    left: 79%; 
+    left: 5%;  
+}
+
+
+.instructionText {
+    position: absolute;
+    bottom: 0.1%;
+    top: 4rem;
 }
 
 
