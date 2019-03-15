@@ -8,205 +8,163 @@
     <link rel="stylesheet" href="css/style.css">
     <script type="text/javascript" src="dist/paper-full.js"></script>
     <script type="text/paperscript" canvas="canvas">
-            function onMouseDrag(event) {
-                // The radius is the distance between the position
-                // where the user clicked and the current position
-                // of the mouse.
-                var path = new Path.Circle({
-                    center: event.downPoint,
-                    radius: (event.downPoint - event.point).length,
-                    fillColor: 'blue',
+        var bigGroup = new Group();
+        var smallGroup = new Group();
 
-                });
-
-                // Remove this path on the next drag event:
-                path.removeOnDrag();
-            };
-
-            // circles
-
-            function changePatternSmallCircle(x) {
-                if (x.matches) { // If media query matches
-                    var circle = new Shape.Circle({
-                        center: [50, 200],
-                        radius: 70,
-                        strokeColor:'black',
-                        strokeWidth: 10
-                    });
-
-
-                    var symbol = new Symbol(circle);
-                    for (var i = 0; i < 1; i++) {
-                        var position = view.size * Point.random();
-                        var placed = symbol.place(position);
-                        }
-                }
-              }
-
-              var x = window.matchMedia("(max-width: 600px)")
-              changePatternSmallCircle(x) // Call listener function at run time
-              x.addListener(changePatternSmallCircle) // Attach listener function on state changes
-
-              // add n of rectangular shapes for bigger screen
-              function changePatternBigCircle(y) {
-                if (y.matches) { // If media query matches
-                    var circle = new Shape.Circle({
-                        center: [50, 200],
-                        radius: 200,
-                        strokeColor:'black',
-                        strokeWidth: 10
-                    });
-
-
-                    var symbol = new Symbol(circle);
-                    for (var i = 0; i < 2; i++) {
-                        var position = view.size * Point.random();
-                        var placed = symbol.place(position);
-                        }
-                }
-              }
-
-              var y = window.matchMedia("(min-width: 601px)")
-              changePatternBigCircle(y) // Call listener function at run time
-              y.addListener(changePatternBigCircle) // Attach listener function on state changes
-
-
-            // reduce n of rectangular shapes for smaller screen
-            function changePatternSmall(x) {
-                if (x.matches) { // If media query matches
-                    var shape = new Shape.Rectangle({
-                        point: [10, 10],
-                        size: [70, 70],
-                        fillColor: 'red'
-                    });
-                    var symbol = new Symbol(shape);
-                    for (var i = 0; i < 2; i++) {
-                        var position = view.size * Point.random();
-                        var placed = symbol.place(position);
-                    }
-                }
-              }
-
-              var x = window.matchMedia("(max-width: 600px)")
-              changePatternSmall(x) // Call listener function at run time
-              x.addListener(changePatternSmall) // Attach listener function on state changes
-
-              // add n of rectangular shapes for bigger screen
-              function changePatternBig(y) {
-                if (y.matches) { // If media query matches
-                    var shape = new Shape.Rectangle({
-                        point: [20, 20],
-                        size: [150, 150],
-                        fillColor: 'red'
-                    });
-                    var symbol = new Symbol(shape);
-                    for (var i = 0; i < 2; i++) {
-                        var position = view.size * Point.random();
-                        var placed = symbol.place(position);
-                    }
-                }
-              }
-
-              var y = window.matchMedia("(min-width: 601px)")
-              changePatternBig(y) // Call listener function at run time
-              y.addListener(changePatternBig) // Attach listener function on state changes
-            //stroke blue 1
-            var pathBlue = new Path(new Point(2, 20), new Point(250, 50));
-                pathBlue.style = {
-	            strokeColor: 'blue',
-	            strokeWidth: 10,
-	            strokeCap: 'square'
-            };
-            // Create a symbol from the path:
-            var symbol = new Symbol(pathBlue);
-            // Place 3 instances of the symbol in the project in random
-            // positions in the view:
-            for (var i = 0; i < 3; i++) {
-	        var position = view.size * Point.random();
-	        var placed = symbol.place(position);
+        function createCircles(group, radius, count) {
+          var circle = new Shape.Circle({
+                center: [50, 200],
+                radius: radius,
+                strokeColor: 'black',
+                strokeWidth: 10
+            });
+        
+            var symbol = new Symbol(circle);
+            for (var i = 0; i < count; i++) {
+                var position = view.size * Point.random();
+                var placed = symbol.place(position);
+                group.addChild(placed);
             }
+        }
+        
+        function createPatterns(group, pointData, sizeData) {
+          var shape = new Shape.Rectangle({
+                point: pointData,
+                size: sizeData,
+                fillColor: 'red'
+            })
+            var symbol = new Symbol(shape);
+            for (var i = 0; i < 2; i++) {
+                var position = view.size * Point.random();
+                var placed = symbol.place(position);
+                group.addChild(placed);
+            }
+        }
 
+        function createYellowPattern(group, strokeWidth, y) {
+          var pathYellow = new Path(new Point(2, y), new Point(250, 730));
+          pathYellow.style = {
+              strokeColor: '#ffd200',
+              strokeWidth: strokeWidth,
+              strokeCap: 'square'
+          };
+  
+          var symbol = new Symbol(pathYellow);
+  
+          for (var i = 0; i < 2; i++) {
+              var position = view.size * Point.random();
+              var placed = symbol.place(position);
+              group.addChild(placed);
+          }
+        }
+    
+        function createBigGroup() {
+          createCircles(bigGroup, 200, 2);
+          createPatterns(bigGroup, [20,20], [150, 150]);
+          createYellowPattern(bigGroup, 70, 20);
+        }
+    
+        function createSmallGroup() {
+          createCircles(smallGroup, 70, 1);
+          createPatterns(smallGroup, [10,10], [70, 70]);
+          createYellowPattern(smallGroup, 30, 5);
+        }
+    
+        var x = window.matchMedia("(max-width: 600px)");
+        var y = window.matchMedia("(min-width: 601px)");
+ 
+        if (x.matches) {
+          createSmallGroup();
+        } else {
+          createBigGroup();
+        }
 
-            //stroke animation 2
-            function changePatternSmallYellow(x) {
-                if (x.matches) { // If media query matches
-                    var pathYellow = new Path(new Point(2, 5), new Point(250, 730));
-                    pathYellow.style = {
-                    strokeColor: '#ffd200',
-                    strokeWidth: 30,
-                    strokeCap: 'square'
-                    };
+        function toggleGroupVisibility(group, mediaMatch, create) {
+          if (mediaMatch) {
+            if (group.children.length === 0) {
+              create()
+            } else {
+              group.opacity = 1;
+            }
+          } else {
+            group.opacity = 0;
+          }
+        }
 
-                    var symbol = new Symbol(pathYellow);
+        x.addListener(function(x) {
+          toggleGroupVisibility(smallGroup, x.matches, createSmallGroup);
+        });
 
-                    for (var i = 0; i < 2; i++) {
-                    var position = view.size * Point.random();
-                    var placed = symbol.place(position);
-                    }
-                }
-              }
-
-              var x = window.matchMedia("(max-width: 600px)")
-              changePatternSmallYellow(x) // Call listener function at run time
-              x.addListener(changePatternSmallYellow) // Attach listener function on state changes
-
-              // add n of rectangular shapes for bigger screen
-
-              function changePatternBigYellow(y) {
-                if (y.matches) { // If media query matches
-                    var pathYellow = new Path(new Point(2, 20), new Point(250, 730));
-                    pathYellow.style = {
-                    strokeColor: '#ffd200',
-                    strokeWidth: 70,
-                    strokeCap: 'square'
-                    };
-
-                    var symbol = new Symbol(pathYellow);
-
-                    for (var i = 0; i < 2; i++) {
-                    var position = view.size * Point.random();
-                    var placed = symbol.place(position);
-              }
-                }
-              }
-
-              var y = window.matchMedia("(min-width: 601px)")
-              changePatternBigYellow(y) // Call listener function at run time
-              y.addListener(changePatternBigYellow) // Attach listener function on state changes
-
-              (function() {
-                var hamburger = {
-                  navToggle: document.querySelector('.nav-toggle'),
-                  nav: document.querySelector('nav'),
-
-                  doToggle: function(e) {
+        y.addListener(function(y) {
+          toggleGroupVisibility(bigGroup, y.matches, createBigGroup);
+        });
+        
+        function onMouseDrag(event) {
+            // The radius is the distance between the position
+            // where the user clicked and the current position
+            // of the mouse.
+            var path = new Path.Circle({
+                center: event.downPoint,
+                radius: (event.downPoint - event.point).length,
+                fillColor: 'blue',
+            });
+        
+            // Remove this path on the next drag event:
+            path.removeOnDrag();
+        };
+      
+        //stroke blue 1
+        var pathBlue = new Path(new Point(2, 20), new Point(250, 50));
+        pathBlue.style = {
+            strokeColor: 'blue',
+            strokeWidth: 10,
+            strokeCap: 'square'
+        };
+        // Create a symbol from the path:
+        var symbol = new Symbol(pathBlue);
+        // Place 3 instances of the symbol in the project in random
+        // positions in the view:
+        for (var i = 0; i < 3; i++) {
+            var position = view.size * Point.random();
+            var placed = symbol.place(position);
+        }
+        
+        (function () {
+            var hamburger = {
+                navToggle: document.querySelector('.nav-toggle'),
+                nav: document.querySelector('nav'),
+        
+                doToggle: function (e) {
                     e.preventDefault();
                     this.navToggle.classList.toggle('expanded');
                     this.nav.classList.toggle('expanded');
-                  }
-                };
-
-                hamburger.navToggle.addEventListener('click', function(e) { hamburger.doToggle(e); });
-                hamburger.nav.addEventListener('click', function(e) { hamburger.doToggle(e); });
-
-              }());
-
-
-              function onMouseDrag(event) {
-                // The radius is the distance between the position
-                // where the user clicked and the current position
-                // of the mouse.
-                var path = new Path.Circle({
-                    center: event.downPoint,
-                    radius: (event.downPoint - event.point).length,
-                    fillColor: 'blue',
-                   
-                });
-                
-                // Remove this path on the next drag event:
-                path.removeOnDrag();
+                }
             };
-            
+        
+            hamburger.navToggle.addEventListener('click', function (e) {
+                hamburger.doToggle(e);
+            });
+            hamburger.nav.addEventListener('click', function (e) {
+                hamburger.doToggle(e);
+            });
+        
+        }());
+        
+        
+        function onMouseDrag(event) {
+            // The radius is the distance between the position
+            // where the user clicked and the current position
+            // of the mouse.
+            var path = new Path.Circle({
+                center: event.downPoint,
+                radius: (event.downPoint - event.point).length,
+                fillColor: 'blue',
+        
+            });
+        
+            // Remove this path on the next drag event:
+            path.removeOnDrag();
+        };
     </script>
 
 </head>
