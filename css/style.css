@@ -199,22 +199,21 @@ a:active {
   /* media queries */
 
   .nav {
-    -webkit-transition: left 0.5s ease;
-    -moz-transition: left 0.5s ease;
-    -ms-transition: left 0.5s ease;
-    -o-transition: left 0.5s ease;
-    transition: left 0.5s ease;
+    -webkit-transition: left 0.1s ease;
+    -moz-transition: left 0.1s ease;
+    -ms-transition: left 0.1s ease;
+    -o-transition: left 0.1s ease;
+    transition: left 0.1s ease;
     background: lightgrey;
     color: white;
     cursor: pointer;
-    font-size: 2rem;
     height: 100vh;
     /* this -26rem might be a bit hacky */
-    right: -26rem;
+    right: -22rem;
     padding: 6rem 2rem 2rem 2rem;
     position: fixed;
     top: 0;
-    width: 20rem;
+    width: 17rem;
     z-index: 1;
   }
 
@@ -236,15 +235,15 @@ a:active {
     -moz-user-select: none;
     user-select: none;
     cursor: pointer;
-    height: 2rem;
-    right: 2rem;
+    height: 1rem;
+    right: 1rem;
     position: fixed;
     top: 2rem;
-    width: 3.6rem;
+    width: 2rem;
     z-index: 2;
   }
 
-  .nav-toggle:hover { opacity: 0.8; }
+  .nav-toggle:hover { opacity: 0.9; }
 
   .nav-toggle .nav-toggle-bar,  .nav-toggle .nav-toggle-bar::after,  .nav-toggle .nav-toggle-bar::before {
     position: absolute;
@@ -252,14 +251,14 @@ a:active {
     -webkit-transform: translateY(-50%);
     -ms-transform: translateY(-50%);
     transform: translateY(-50%);
-    -webkit-transition: all 0.5s ease;
-    -moz-transition: all 0.5s ease;
-    -ms-transition: all 0.5s ease;
-    -o-transition: all 0.5s ease;
-    transition: all 0.5s ease;
+    -webkit-transition: all 0.7s ease;
+    -moz-transition: all 0.7s ease;
+    -ms-transition: all 0.7s ease;
+    -o-transition: all 0.7s ease;
+    transition: all 0.7s ease;
     background: black;
     content: '';
-    height: 0.4rem;
+    height: 0.2rem;
     width: 100%;
   }
 
