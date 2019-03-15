@@ -40,7 +40,7 @@ h4 {
     font-weight: lighter;
     font-size: 0.9rem;
     margin-top: 0.2rem;
-    
+
 }
 
 h5 {
@@ -60,7 +60,7 @@ h6 {
 h7 {
     font-family: Arial, Helvetica, sans-serif;
     font-weight: lighter;
-    font-size: 0.9rem;  
+    font-size: 0.9rem;
 }
 
 p {
@@ -135,7 +135,7 @@ hr {
     overflow: auto;
 }
 
-  
+
 #navList-horizontal a {
     float: left;
     margin-left: 7%;
@@ -148,13 +148,13 @@ hr {
 
   .content {
     margin: 3rem;
-    
+
 }
 
 .main-subtext {
     position: absolute;
     top: 85%;
-    left: 5%;  
+    left: 5%;
 }
 
 
@@ -173,21 +173,21 @@ a:link {
     color: black;
     text-decoration: none;
   }
-  
+
 /* visited link */
 a:visited {
     color: blue;
     text-decoration: none;
 
   }
-  
+
 /* mouse over link */
 a:hover {
     color: red;
     text-decoration: none;
 
   }
-  
+
 /* selected link */
 a:active {
     color: yellow;
@@ -197,14 +197,107 @@ a:active {
 
   /* media queries */
 
+  .nav {
+    -webkit-transition: left 0.5s ease;
+    -moz-transition: left 0.5s ease;
+    -ms-transition: left 0.5s ease;
+    -o-transition: left 0.5s ease;
+    transition: left 0.5s ease;
+    background: lightgrey;
+    color: white;
+    cursor: pointer;
+    font-size: 2rem;
+    height: 100vh;
+    /* this -26rem might be a bit hacky */
+    right: -26rem;
+    padding: 6rem 2rem 2rem 2rem;
+    position: fixed;
+    top: 0;
+    width: 20rem;
+    z-index: 1;
+  }
 
+  .nav.expanded { right: 0; }
 
- 
+  .nav ul {
+    position: absolute;
+    top: 35%;
+    -webkit-transform: translateY(-50%);
+    -ms-transform: translateY(-50%);
+    transform: translateY(-50%);
+    list-style: none;
+    margin: 0;
+    padding: 0;
+  }
+
+  .nav-toggle {
+    -webkit-user-select: none;
+    -moz-user-select: none;
+    user-select: none;
+    cursor: pointer;
+    height: 2rem;
+    right: 2rem;
+    position: fixed;
+    top: 2rem;
+    width: 3.6rem;
+    z-index: 2;
+  }
+
+  .nav-toggle:hover { opacity: 0.8; }
+
+  .nav-toggle .nav-toggle-bar,  .nav-toggle .nav-toggle-bar::after,  .nav-toggle .nav-toggle-bar::before {
+    position: absolute;
+    top: 50%;
+    -webkit-transform: translateY(-50%);
+    -ms-transform: translateY(-50%);
+    transform: translateY(-50%);
+    -webkit-transition: all 0.5s ease;
+    -moz-transition: all 0.5s ease;
+    -ms-transition: all 0.5s ease;
+    -o-transition: all 0.5s ease;
+    transition: all 0.5s ease;
+    background: black;
+    content: '';
+    height: 0.4rem;
+    width: 100%;
+  }
+
+  .nav-toggle .nav-toggle-bar { margin-top: 0; }
+
+  .nav-toggle .nav-toggle-bar::after { margin-top: 0.8rem; }
+
+  .nav-toggle .nav-toggle-bar::before { margin-top: -0.8rem; }
+
+  .nav-toggle.expanded .nav-toggle-bar { background: transparent; }
+
+  .nav-toggle.expanded .nav-toggle-bar::after, .nav-toggle.expanded .nav-toggle-bar::before {
+    background: black;
+    margin-top: 0;
+  }
+
+  .nav-toggle.expanded .nav-toggle-bar::after {
+    -ms-transform: rotate(45deg);
+    -webkit-transform: rotate(45deg);
+    transform: rotate(45deg);
+  }
+
+  .nav-toggle.expanded .nav-toggle-bar::before {
+    -ms-transform: rotate(-45deg);
+    -webkit-transform: rotate(-45deg);
+    transform: rotate(-45deg);
+  }
+
 @media only screen and (max-width: 600px) {
     .nav-big {
       display: none;
     }
-} 
+}
+
+@media only screen and (min-width: 601px) {
+    .nav-mobile {
+      display: none;
+    }
+}
 
   @media only screen and (min-width: 601px) {
   .nav-big {
