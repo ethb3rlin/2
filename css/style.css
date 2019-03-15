@@ -85,6 +85,7 @@ hr {
 
 #mainLogo {
     position: absolute;
+    width: 42rem;
     margin-left: 5%;
     margin-top: 8%;
     transform: scale(0.7, 0.7);
@@ -104,14 +105,7 @@ hr {
     margin-bottom: 1rem;
 }
 
-.nav {
-    margin-left: 80%;
-    margin-right: 20%;
-    margin-top: 70px;
-    position:absolute;
-    color:black;
 
-}
 
 .nav-second {
     margin-top: 240px;
@@ -172,7 +166,6 @@ hr {
 
 
 
-
 /* LINKS */
 
 /* unvisited link */
@@ -202,3 +195,23 @@ a:active {
 
   }
 
+  /* media queries */
+
+
+
+ 
+@media only screen and (max-width: 600px) {
+    .nav-big {
+      display: none;
+    }
+} 
+
+  @media only screen and (min-width: 601px) {
+  .nav-big {
+    margin-left: 80%;
+    margin-right: 20%;
+    margin-top: 70px;
+    position:absolute;
+    color:black;
+    }
+}
