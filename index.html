@@ -19,46 +19,103 @@
                    
                 });
                 
-
                 // Remove this path on the next drag event:
                 path.removeOnDrag();
             };
+
+            // circles
             
-            // circle
-
-            var circle = new Shape.Circle({
-                center: [50, 200],
-                radius: 200,
-                strokeColor:'black',
-                strokeWidth: 10
-            });
-
+            function changePatternSmallCircle(x) {
+                if (x.matches) { // If media query matches
+                    var circle = new Shape.Circle({
+                        center: [50, 200],
+                        radius: 70,
+                        strokeColor:'black',
+                        strokeWidth: 10
+                    });
             
-           
+            
+                    var symbol = new Symbol(circle);
+                    for (var i = 0; i < 1; i++) {
+                        var position = view.size * Point.random();
+                        var placed = symbol.place(position);
+                        }
+                } 
+              }
+              
+              var x = window.matchMedia("(max-width: 600px)")
+              changePatternSmallCircle(x) // Call listener function at run time
+              x.addListener(changePatternSmallCircle) // Attach listener function on state changes
+            
+              // add n of rectangular shapes for bigger screen
 
-            var symbol = new Symbol(circle);
-            for (var i = 0; i < 2; i++) {
-                var position = view.size * Point.random();
-                var placed = symbol.place(position);
-                }
+              function changePatternBigCircle(y) {
+                if (y.matches) { // If media query matches
+                    var circle = new Shape.Circle({
+                        center: [50, 200],
+                        radius: 200,
+                        strokeColor:'black',
+                        strokeWidth: 10
+                    });
+            
+            
+                    var symbol = new Symbol(circle);
+                    for (var i = 0; i < 2; i++) {
+                        var position = view.size * Point.random();
+                        var placed = symbol.place(position);
+                        }
+                } 
+              }
+              
+              var y = window.matchMedia("(min-width: 601px)")
+              changePatternBigCircle(y) // Call listener function at run time
+              y.addListener(changePatternBigCircle) // Attach listener function on state changes
          
+     
+            // reduce n of rectangular shapes for smaller screen
+            function changePatternSmall(x) {
+                if (x.matches) { // If media query matches
+                    var shape = new Shape.Rectangle({
+                        point: [10, 10],
+                        size: [70, 70],
+                        fillColor: 'red'
+                    });
 
-            // rectangle
+                    var symbol = new Symbol(shape);
+                    for (var i = 0; i < 2; i++) {
+                        var position = view.size * Point.random();
+                        var placed = symbol.place(position);
+                    } 
+                } 
+              }
+              
+              var x = window.matchMedia("(max-width: 600px)")
+              changePatternSmall(x) // Call listener function at run time
+              x.addListener(changePatternSmall) // Attach listener function on state changes
 
-            var shape = new Shape.Rectangle({
-                point: [20, 20],
-                size: [200, 200],
-                fillColor: 'red'
-            });
+              // add n of rectangular shapes for bigger screen
 
-           
+              function changePatternBig(y) {
+                if (y.matches) { // If media query matches
+                    var shape = new Shape.Rectangle({
+                        point: [20, 20],
+                        size: [200, 200],
+                        fillColor: 'red'
+                    });
 
-            var symbol = new Symbol(shape);
-            for (var i = 0; i < 3; i++) {
-                var position = view.size * Point.random();
-                var placed = symbol.place(position);
-                }
-         
+                    var symbol = new Symbol(shape);
+                    for (var i = 0; i < 2; i++) {
+                        var position = view.size * Point.random();
+                        var placed = symbol.place(position);
+                    } 
+                } 
+              }
+              
+              var y = window.matchMedia("(min-width: 601px)")
+              changePatternBig(y) // Call listener function at run time
+              y.addListener(changePatternBig) // Attach listener function on state changes
+
+
 
             //stroke blue 1
 
@@ -78,29 +135,58 @@
 	        var position = view.size * Point.random();
 	        var placed = symbol.place(position);
             }
-
-            
+        
 
             //stroke animation 2
 
-            var pathYellow = new Path(new Point(2, 20), new Point(250, 730));
-            pathYellow.style = {
-            strokeColor: '#ffd200',
-            strokeWidth: 70,
-            strokeCap: 'square'
-            };
+            function changePatternSmallYellow(x) {
+                if (x.matches) { // If media query matches
+                    var pathYellow = new Path(new Point(2, 5), new Point(250, 730));
+                    pathYellow.style = {
+                    strokeColor: '#ffd200',
+                    strokeWidth: 30,
+                    strokeCap: 'square'
+                    };
+            
+                    var symbol = new Symbol(pathYellow);
+            
+                    for (var i = 0; i < 2; i++) {
+                    var position = view.size * Point.random();
+                    var placed = symbol.place(position);
+                    }
+                } 
+              }
+              
+              var x = window.matchMedia("(max-width: 600px)")
+              changePatternSmallYellow(x) // Call listener function at run time
+              x.addListener(changePatternSmallYellow) // Attach listener function on state changes
+            
+              // add n of rectangular shapes for bigger screen
+            
+              function changePatternBigYellow(y) {
+                if (y.matches) { // If media query matches
+                    var pathYellow = new Path(new Point(2, 20), new Point(250, 730));
+                    pathYellow.style = {
+                    strokeColor: '#ffd200',
+                    strokeWidth: 70,
+                    strokeCap: 'square'
+                    };
+            
+                    var symbol = new Symbol(pathYellow);
+            
+                    for (var i = 0; i < 2; i++) {
+                    var position = view.size * Point.random();
+                    var placed = symbol.place(position);
+              }
+                } 
+              }
+              
+              var y = window.matchMedia("(min-width: 601px)")
+              changePatternBigYellow(y) // Call listener function at run time
+              y.addListener(changePatternBigYellow) // Attach listener function on state changes
 
-            // Create a symbol from the path:
-            var symbol = new Symbol(pathYellow);
 
-            // Place 3 instances of the symbol in the project in random
-            // positions in the view:
-            for (var i = 0; i < 3; i++) {
-            var position = view.size * Point.random();
-            var placed = symbol.place(position);
-            }
-
-         
+            
 
     </script>
     
