@@ -147,7 +147,9 @@
             hamburger.nav.addEventListener('click', function (e) {
                 hamburger.doToggle(e);
             });
-        
+            hamburger.nav.querySelector('#navList').addEventListener('click', function (e) {
+              e.stopPropagation();
+            });
         }());
         
         
