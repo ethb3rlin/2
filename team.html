@@ -31,6 +31,31 @@
         function onFrame(event) {
             pathOrange.rotate(1);
         }
+
+    //hamburger menu
+        
+        (function () {
+          var hamburger = {
+              navToggle: document.querySelector('.nav-toggle'),
+              nav: document.querySelector('nav'),
+      
+              doToggle: function (e) {
+                  e.preventDefault();
+                  this.navToggle.classList.toggle('expanded');
+                  this.nav.classList.toggle('expanded');
+              }
+          };
+      
+          hamburger.navToggle.addEventListener('click', function (e) {
+              hamburger.doToggle(e);
+          });
+          hamburger.nav.addEventListener('click', function (e) {
+              hamburger.doToggle(e);
+          });
+          hamburger.nav.querySelector('#navList').addEventListener('click', function (e) {
+            e.stopPropagation();
+          });
+      }());
         
             
 
@@ -38,18 +63,48 @@
 </head>
 <body>
         <div class="container">
-        <div id="logo">
+            <div id="logo">
                 <a href="index.html"><img src="img/mainlogo.svg" alt="logo" style="width: 10rem" /></a>
+            </div>
+                <div class="nav-horizontal">
+                    <ul id="navList-horizontal">
+                        <li><a href="about.html">about+FAQs</a></li>
+                        <li><a href="hack.html">hack</a></li>
+                        <li><a href="speak.html">speak</a></li>
+                        <li><a href="team.html">join</a></li>
+                        <li><a href="sponsor.html">sponsor</a></li>
+                        <li><a href="https://www.dappcon.io/">dAppcon</a></li>
+                        <li><a href="https://medium.com/ethberlin">blog</a></li>
+                    </ul>
                 </div>
-                <ul id="navList-horizontal">
-                    <li><a href="about.html">about+FAQs</a></li>
-                    <li><a href="hack.html">hack</a></li>
-                    <li><a href="speak.html">speak</a></li>
-                    <li><a href="team.html">join</a></li>
-                    <li><a href="sponsor.html">sponsor</a></li>
-                    <li><a href="https://www.dappcon.io/">dAppcon</a></li>
-                    <li><a href="https://medium.com/ethberlin">blog</a></li>
-                </ul>
+                <div class="nav-mobile">
+                    <div class="nav-toggle">
+                      <div class="nav-toggle-bar">
+                      </div>
+                    </div>
+                    <nav class="nav">
+                      <ul id="navList">
+                          <li><a href="about.html"><h4>about+FAQs</h4></a></li>
+                          <li><a href="hack.html"><h4>hack</h4></a></li>
+                          <li><a href="speak.html"><h4>speak</h4></a></li>
+                          <li><a href="team.html"><h4>join</h4></a></li>
+                          <li><a href="sponsor.html"><h4>sponsor</h4></a></li>
+                          <li><a href="https://www.dappcon.io/" target="_blank"><h4>dAppcon<img class="external-link-small" src="img/external.svg" alt="external link to dappcon.io"></h4></a></li>
+                          <li><a href="https://medium.com/ethberlin" target="_blank"><h4>blog<img class="external-link-small" src="img/external.svg" alt="external link to ethberlin blog"></h4></a></li>
+                          <hr>
+                          <br>
+                          <li><h7><a href="https://decentralala.com" target="_blank">A Department of Decentralization Hacker Extravaganza<img class="external-link-small" src="img/external.svg" alt="external link to DoD"></a></h7></li>
+                              //
+                              <li><h7>Part of the <a href="https://blockchainweek.berlin/" target="_blank">Berlin Blockchain Week<img class="external-link-small" src="img/external.svg" alt="external link to ethberlin Berlin Blockchain Week"></a></h7></li>
+                              //
+                              <li><h7><a href="https://github.com/Department-of-Decentralization/decentralala.com/blob/master/code-of-conduct.md" target="_blank">code of conduct<img class="external-link-small" src="img/external.svg" alt="external link to code of conduct"></a></h7></li>
+                              //
+                              <li><h7><a href="imprint.html">imprint</a></h7></li>
+                              //
+                              <li><h7>design inspired by Bauhaus</a></h7></li>
+                      </ul>
+                    </nav>
+                  </div>
                 <hr>
         <div class="content">
                 <div class="title"><h6>Volunteer</h6></div>

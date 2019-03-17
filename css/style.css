@@ -312,6 +312,12 @@ a:active {
     }
 }
 
+@media only screen and (max-width: 600px) {
+    #navList-horizontal {
+      display: none;
+    }
+}
+
 @media only screen and (min-width: 601px) {
     .nav-mobile {
       display: none;
