@@ -85,6 +85,7 @@ hr {
 }
 
 #mainLogo {
+    pointer-events: none;
     position: absolute;
     width: 42rem;
     margin-left: 5%;
@@ -172,6 +173,7 @@ hr {
 }
 
 .main-subtext {
+    pointer-events: none;
     position: absolute;
     top: 85%;
     left: 5%;
