@@ -236,9 +236,14 @@ a:active {
     top: 0;
     width: 17rem;
     z-index: 1;
+    transition: 0.8s;
   }
 
-  .nav.expanded { right: 0; }
+  .nav.expanded { 
+      right: 0; 
+      transition: 0.8s;
+      
+  }
 
   .nav ul {
     position: absolute;
@@ -249,6 +254,7 @@ a:active {
     list-style: none;
     margin: 0;
     padding: 0;
+   
   }
 
   .nav-toggle {
@@ -262,6 +268,7 @@ a:active {
     top: 2rem;
     width: 2rem;
     z-index: 2;
+    
   }
 
   .nav-toggle:hover { opacity: 0.9; }
@@ -294,6 +301,7 @@ a:active {
   .nav-toggle.expanded .nav-toggle-bar::after, .nav-toggle.expanded .nav-toggle-bar::before {
     background: black;
     margin-top: 0;
+    
   }
 
   .nav-toggle.expanded .nav-toggle-bar::after {
