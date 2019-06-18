@@ -201,6 +201,10 @@ hr {
     font-size: 30px;
     text-align: center;
 }
+img {
+    width: 7.5rem;
+    align-content: center;
+}
 
 /* LINKS */
 
@@ -226,12 +230,12 @@ a:hover {
 
 /* selected link */
 a:active {
-    color: yellow;
+    color: blue;
     text-decoration: none;
 
   }
 
-  /* media queries */
+/* media queries */
 
   .nav {
     -webkit-transition: left 0.1s ease;
