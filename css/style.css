@@ -223,14 +223,14 @@ a:visited {
 
 /* mouse over link */
 a:hover {
-    color: blue;
+    color: red;
     text-decoration: none;
 
   }
 
 /* selected link */
 a:active {
-    color: blue;
+    color: red;
     text-decoration: none;
 
   }
