@@ -173,10 +173,12 @@ hr {
 }
 
 .main-subtext {
+    font-family: "bc-falster";
     pointer-events: none;
     position: absolute;
     top: 85%;
     left: 5%;
+    font-size: 1.6rem;
 }
 
 
