@@ -209,6 +209,29 @@ img {
     align-content: center;
 }
 
+/* GRID: SPONSORS */
+
+.grid-container-sponsor-t1 {
+    display: grid;
+    grid-template-columns: auto auto;
+    background-color: none;
+    padding: 10px;
+    justify-content: center;
+}
+
+.grid-container-sponsor {
+    display: grid;
+    grid-template-columns: auto auto auto;
+    background-color: none;
+    padding: 10px;
+}
+
+.sponsor-t1 {
+    width: 15rem;
+}
+
+
+
 /* LINKS */
 
 /* unvisited link */
