@@ -216,7 +216,7 @@ img {
     grid-template-columns: auto auto;
     background-color: none;
     padding: 10px;
-    justify-content: center;
+    justify-content: space-around;
 }
 
 .grid-container-sponsor {
@@ -227,7 +227,7 @@ img {
 }
 
 .sponsor-t1 {
-    width: 15rem;
+    width: 18rem;
 }
 
 
@@ -361,7 +361,7 @@ a:active {
   }
 
 @media only screen and (max-width: 850px) {
-    .grid-container {
+    .grid-container, .grid-container-sponsor, .grid-container-sponsor-t1 {
         grid-template-columns: auto auto;
     }
 }
@@ -379,7 +379,7 @@ a:active {
         width: 350px;
         word-wrap: break-word;
     }
-    .grid-container {
+    .grid-container, .grid-container-sponsor, .grid-container-sponsor-t1 {
         grid-template-columns: auto;
     }
 }
