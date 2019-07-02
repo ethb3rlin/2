@@ -364,6 +364,9 @@ a:active {
     .grid-container, .grid-container-sponsor, .grid-container-sponsor-t1 {
         grid-template-columns: auto auto;
     }
+    img {
+        padding-right: 0 !important;
+    }
 }
 
 @media only screen and (max-width: 600px) {
@@ -381,6 +384,9 @@ a:active {
     }
     .grid-container, .grid-container-sponsor, .grid-container-sponsor-t1 {
         grid-template-columns: auto;
+    }
+    img {
+        padding-right: 0 !important;
     }
 }
     
