@@ -15,13 +15,13 @@
     <title>ETHBerlin</title>
     <script type="text/javascript" src="dist/paper-full.js"></script>
     <script type="text/paperscript" canvas="canvas">
-        
 
-        //stroke red 
+
+        //stroke red
             var triangle = new Path.RegularPolygon(new Point(80, 70), 3, 50);
             triangle.fillColor = 'blue';
 
-           
+
 
             // Create a symbol from the path:
             var symbol = new Symbol(triangle);
@@ -36,22 +36,22 @@
             function onFrame(event) {
                 triangle.rotate(1);
             }
-        
+
 
         //hamburger menu
-        
+
           (function () {
             var hamburger = {
                 navToggle: document.querySelector('.nav-toggle'),
                 nav: document.querySelector('nav'),
-        
+
                 doToggle: function (e) {
                     e.preventDefault();
                     this.navToggle.classList.toggle('expanded');
                     this.nav.classList.toggle('expanded');
                 }
             };
-        
+
             hamburger.navToggle.addEventListener('click', function (e) {
                 hamburger.doToggle(e);
             });
@@ -62,7 +62,7 @@
               e.stopPropagation();
             });
         }());
-            
+
 
     </script>
 </head>
@@ -114,20 +114,21 @@
                     </nav>
                   </div>
                 <hr>
-        
+
         <div class="content">
                 <div class="title"><h6>hack</h6></div>
-                <h4 style="text-align:center"><a href="https://ethberlin.typeform.com/to/Ol7zeq">APPLY TO HACK NOW! </a>
+                <h4 style="text-align:center">APPLICATIONS ARE NOW CLOSED.</h4>
                 <br>
-                <h4 style="text-align:center">APPLICATIONS ARE NOW CLOSED.</a></h4>
-                <br> 
-                <h4 style="text-align:center">Selection process stewarded by the Görli Testnet Community.</h4>
+                <h4 style="text-align:center">HEAD STRAIGHT TO THE <a href="https://ethberlinzwei.github.io/KnowledgeBase/index.html">KNOWLEDGE BASE</a>.</h4>
                 <br>
-                <h4 style="text-align:center">We expect ALL hackers to accept our <a href="https://github.com/ethberlin-hackathon/ETHBerlin-KnowledgeBase/blob/master/code-of-conduct.md">Code of Conduct.</a></h4>
+                <h4 style="text-align:center">WE EXPECT ALL HACKERS TO ACCEPT OUR <a href="https://ethberlinzwei.github.io/KnowledgeBase/code-of-conduct.html">CODE OF CONDUCT</a>.</h4>
+                <br>
+                <h4 style="text-align:center">Sorry for caps and happy hacking! <pre>&lt;3</pre></h4>
+
 
         </div>
     <canvas id="canvas" style="background-color: rgb(255, 251, 239)" resize="true"></canvas>
     </div>
-    
+
 </body>
 </html>

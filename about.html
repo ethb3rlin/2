@@ -15,9 +15,9 @@
     <title>ETHBerlin</title>
     <script type="text/javascript" src="dist/paper-full.js"></script>
     <script type="text/paperscript" canvas="canvas">
-        
 
-        //stroke red 
+
+        //stroke red
             var pathRed = new Path(new Point(2, 20), new Point(250, 50));
                 pathRed.style = {
 	            strokeColor: 'red',
@@ -38,21 +38,21 @@
             function onFrame(event) {
                 pathRed.rotate(1);
             }
-        
+
         //hamburger menu
-        
+
             (function () {
               var hamburger = {
                   navToggle: document.querySelector('.nav-toggle'),
                   nav: document.querySelector('nav'),
-          
+
                   doToggle: function (e) {
                       e.preventDefault();
                       this.navToggle.classList.toggle('expanded');
                       this.nav.classList.toggle('expanded');
                   }
               };
-          
+
               hamburger.navToggle.addEventListener('click', function (e) {
                   hamburger.doToggle(e);
               });
@@ -63,7 +63,7 @@
                 e.stopPropagation();
               });
           }());
-            
+
 
     </script>
 </head>
@@ -116,9 +116,11 @@
                   </div>
                 <hr>
         <div class="content">
-                <div class="title"><h6>about + FAQs</h6></div>
+                <div class="title"><h6>f.a.q.</h6></div>
+                <h4 style="text-align:center">Questions? Head straight to the <a href="https://ethberlinzwei.github.io/KnowledgeBase/index.html">knowledge base</a>!</h4>
+                <div class="title"><h6>about</h6></div>
                 <h4>ETHBerlinZwei is a hackathon, a culture festival, an educational event,
-                    a platform for hacktivism, and a community initiative to push the decentralized ecosystem forward. 
+                    a platform for hacktivism, and a community initiative to push the decentralized ecosystem forward.
                     After a successful <a href="https://ethberlin.com/photos/" target="_blank">2018 event</a>,
                     ETHBerlin decided to reaffirm its commitment with the ecosystem and founded <a href="https://decentralala.com" target="_blank">the Department of Decentralization</a>,
                     responsible for initiatives that go beyond organizing a hackathon
@@ -131,14 +133,14 @@
                     ETHBerlinZwei’s talks and panels will be held at <a href="https://www.dappcon.io/" target="_blank">dAppcon Berlin</a>
                     so all participants will have access to the conference before diving deep into the Zwei experience.</h4>
 		        <h4><strong>Who we are (in alphabetical order):</strong><h4>
-		        <h4>Adeola - Afri - Alex - Ben - Caspar - Chris - Daniel - Elias - exiledsurfer - Fanny - Franzi - Guto - Hels - Herni - Lasse - Lili - Maya - Mareen - Maurice - MP - Phil - Raul - Simon - Stina - Trenton<h4> 
+		        <h4>Adeola - Afri - Alex - Ben - Caspar - Chris - Daniel - Elias - exiledsurfer - Fanny - Franzi - Guto - Hels - Herni - Lasse - Lili - Maya - Mareen - Maurice - MP - Phil - Raul - Simon - Stina - Trenton<h4>
 
 		        <h4>Special thanks to our friends at Gnosis, Full Node, and dAppcon<h4>
                 <br>
                 <br>
                 <div class="title"><h6>concept</h6></div>
                 <h4>Our website design and 2019 image are inspired by the centennial of the Bauhaus school.</h4>
-                
+
                 <h4>The Bauhaus, a German word meaning "house of building",
                     is a school founded in 1919 in Weimar, Germany by the architect Walter Gropius.
                     Its mission, according to Gropius, was to conceive and create the new building of the future,
@@ -147,7 +149,7 @@
                     In short, the Bauhaus trained students to be equally comfortable with design, craft, and methods of mass production.
                     The Bauhaus pioneers were fearless builders, that withstood persecution, criticism, had to be exiled, but in the end,
                     their legacy prevails as the most influential school of the last century.</h4>
-                
+
                 <h4>ETHBerlin is a house of building, too.</h4>
                 <h4>Made by builders, for builders.
                     We don’t need to explain the parallelisms here. Feel free to dig into the site,
@@ -160,10 +162,10 @@
                 Graphic design and architectural feedback:  <a href="https://twitter.com/trent_vanepps" target="_blank">Trenton Van Epps</a><br />
                 Illustration and reconceptualization: Hernán Fernández<br />
                 Concept:  <a href="https://twitter.com/MPtherealMVP" target="_blank">MP Fernández</a></h4>
-    
+
         </div>
     <canvas id="canvas" style="background-color: rgb(255, 251, 239)" resize="true"></canvas>
     </div>
-    
+
 </body>
 </html>
