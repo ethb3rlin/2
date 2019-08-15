@@ -15,9 +15,9 @@
     <title>ETHBerlin</title>
     <script type="text/javascript" src="dist/paper-full.js"></script>
     <script type="text/paperscript" canvas="canvas">
-                    
 
-        //stroke blue 
+
+        //stroke blue
         var pathBlue = new Path(new Point(2, 20), new Point(250, 50));
             pathBlue.style = {
             strokeColor: 'blue',
@@ -38,22 +38,22 @@
         function onFrame(event) {
             pathBlue.rotate(1);
         }
-            
+
 
     //hamburger menu
-        
+
           (function () {
             var hamburger = {
                 navToggle: document.querySelector('.nav-toggle'),
                 nav: document.querySelector('nav'),
-        
+
                 doToggle: function (e) {
                     e.preventDefault();
                     this.navToggle.classList.toggle('expanded');
                     this.nav.classList.toggle('expanded');
                 }
             };
-        
+
             hamburger.navToggle.addEventListener('click', function (e) {
                 hamburger.doToggle(e);
             });
@@ -103,7 +103,7 @@
                               //
                               <li><h7>Part of the <a href="https://blockchainweek.berlin/" target="_blank">Berlin Blockchain Week<img class="external-link-small" src="img/external.svg" alt="external link to ethberlin Berlin Blockchain Week"></a></h7></li>
                               //
-                              <li><h7><a href="https://github.com/Department-of-Decentralization/decentralala.com/blob/master/code-of-conduct.md" target="_blank">code of conduct<img class="external-link-small" src="img/external.svg" alt="external link to code of conduct"></a></h7></li>
+                              <li><h7><a href="https://ethberlinzwei.github.io/KnowledgeBase/code-of-conduct.html" target="_blank">code of conduct<img class="external-link-small" src="img/external.svg" alt="external link to code of conduct"></a></h7></li>
                               //
                               <li><h7><a href="imprint.html">imprint</a></h7></li>
                               //
@@ -115,10 +115,10 @@
                   </div>
                 <hr>
         <div class="content">
-                  
+
             <div class="title"><h6>speakers</h6></div>
             <h4 style="text-align:center">*** More speakers coming soon! ***</h4>
-                <br> 
+                <br>
             <div class="grid-container">
                 <div class="grid-item"><div class="profile"><img src="img/speaker/r-afri.png"></div>
                     <br>
@@ -357,25 +357,25 @@
                         <strong>Yaz Khoury</strong>
                     <div class="twitter"><a href="https://twitter.com/Yazanator" target="blank">@Yazanator</a></div>
                 </div>
-            </div>  
+            </div>
             <br>
             <br>
             <br>
-           
+
 
                 <br>
                 <h4>Applications to speak are now closed.</h4>
-                
+
                 <br>
                 <h4>Curation team led by exiledsurfer & Helena Flack.</h4>
                 <br>
                 <h4>We expect all speakers to accept and adhere to our
-                    <a href="https://github.com/ethberlin-hackathon/ETHBerlin-KnowledgeBase/blob/master/code-of-conduct.md">Code of Conduct.</a></h4>
-                
-    
+                    <a href="https://ethberlinzwei.github.io/KnowledgeBase/code-of-conduct.html">Code of Conduct.</a></h4>
+
+
         </div>
     <canvas id="canvas" style="background-color: rgb(255, 251, 239)" resize="true"></canvas>
     </div>
-    
+
 </body>
 </html>
