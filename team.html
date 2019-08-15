@@ -15,9 +15,9 @@
     <title>ETHBerlin</title>
     <script type="text/javascript" src="dist/paper-full.js"></script>
     <script type="text/paperscript" canvas="canvas">
-        
 
-        //stroke orange 
+
+        //stroke orange
         var pathOrange = new Path(new Point(2, 20), new Point(250, 50));
             pathOrange.style = {
             strokeColor: 'orange',
@@ -40,19 +40,19 @@
         }
 
     //hamburger menu
-        
+
         (function () {
           var hamburger = {
               navToggle: document.querySelector('.nav-toggle'),
               nav: document.querySelector('nav'),
-      
+
               doToggle: function (e) {
                   e.preventDefault();
                   this.navToggle.classList.toggle('expanded');
                   this.nav.classList.toggle('expanded');
               }
           };
-      
+
           hamburger.navToggle.addEventListener('click', function (e) {
               hamburger.doToggle(e);
           });
@@ -63,8 +63,8 @@
             e.stopPropagation();
           });
       }());
-        
-            
+
+
 
     </script>
 </head>
@@ -104,7 +104,7 @@
                               //
                               <li><h7>Part of the <a href="https://blockchainweek.berlin/" target="_blank">Berlin Blockchain Week<img class="external-link-small" src="img/external.svg" alt="external link to ethberlin Berlin Blockchain Week"></a></h7></li>
                               //
-                              <li><h7><a href="https://github.com/Department-of-Decentralization/decentralala.com/blob/master/code-of-conduct.md" target="_blank">code of conduct<img class="external-link-small" src="img/external.svg" alt="external link to code of conduct"></a></h7></li>
+                              <li><h7><a href="https://ethberlinzwei.github.io/KnowledgeBase/code-of-conduct.html" target="_blank">code of conduct<img class="external-link-small" src="img/external.svg" alt="external link to code of conduct"></a></h7></li>
                               //
                               <li><h7><a href="imprint.html">imprint</a></h7></li>
                               //
@@ -121,12 +121,12 @@
 
                 <div class="title"><h6>Volunteer</h6></div>
                 <div class="title"><h4>Volunteer applications are now closed. For any volunteer-related inquiry, feel free to reach out to volunteers[at]ethberlin.com!</div>
-             
+
                 <div class="title"><h4>Initiative led by Franzi Heintel and Raul Romanutti</h4></div>
                 <br>
                 <div class="title"><h6>Mentor</h6></div>
                 <div class="title"><h4>Mentor applications are now closed.</div>
-               
+
                 <div class="title"><h4><h4>Mentorship taskforce organized by Phil “Liam” Stehlik, Elias Haase, and Caspar Schwarz “the shiller” Schilling.</h4></div>
                 </div>
                 <div class="title"><h6>Judge</h6></div>
@@ -136,17 +136,17 @@
                 </div>
                 <br>
                 <div class="title"><h6>CoC</h6></div>
-                <div class="title"><h4>We expect all volunteers, mentors and judges to accept and adhere to our <a href="https://github.com/ethberlin-hackathon/ETHBerlin-KnowledgeBase/blob/master/code-of-conduct.md">Code of Conduct.</a></h4>
+                <div class="title"><h4>We expect all volunteers, mentors and judges to accept and adhere to our <a href="https://ethberlinzwei.github.io/KnowledgeBase/code-of-conduct.html">Code of Conduct.</a></h4>
                 </div>
 
-                    
-                    
-                
-                
-    
+
+
+
+
+
         </div>
     <canvas id="canvas" style="background-color: rgb(255, 251, 239)" resize="true"></canvas>
     </div>
-    
+
 </body>
 </html>
