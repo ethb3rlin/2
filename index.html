@@ -25,7 +25,7 @@
                 strokeColor: 'black',
                 strokeWidth: 10
             });
-        
+
             var symbol = new Symbol(circle);
             for (var i = 0; i < count; i++) {
                 var position = view.size * Point.random();
@@ -33,7 +33,7 @@
                 group.addChild(placed);
             }
         }
-        
+
         function createPatterns(group, pointData, sizeData) {
           var shape = new Shape.Rectangle({
                 point: pointData,
@@ -55,31 +55,31 @@
               strokeWidth: strokeWidth,
               strokeCap: 'square'
           };
-  
+
           var symbol = new Symbol(pathYellow);
-  
+
           for (var i = 0; i < 2; i++) {
               var position = view.size * Point.random();
               var placed = symbol.place(position);
               group.addChild(placed);
           }
         }
-    
+
         function createBigGroup() {
           createCircles(bigGroup, 200, 2);
           createPatterns(bigGroup, [20,20], [150, 150]);
           createYellowPattern(bigGroup, 70, 20);
         }
-    
+
         function createSmallGroup() {
           createCircles(smallGroup, 70, 1);
           createPatterns(smallGroup, [10,10], [70, 70]);
           createYellowPattern(smallGroup, 30, 5);
         }
-    
+
         var x = window.matchMedia("(max-width: 600px)");
         var y = window.matchMedia("(min-width: 601px)");
- 
+
         if (x.matches) {
           createSmallGroup();
         } else {
@@ -105,7 +105,7 @@
         y.addListener(function(y) {
           toggleGroupVisibility(bigGroup, y.matches, createBigGroup);
         });
-        
+
         function onMouseDrag(event) {
             // The radius is the distance between the position
             // where the user clicked and the current position
@@ -115,11 +115,11 @@
                 radius: (event.downPoint - event.point).length,
                 fillColor: 'blue',
             });
-        
+
             // Remove this path on the next drag event:
             path.removeOnDrag();
         };
-      
+
         //stroke blue 1
         var pathBlue = new Path(new Point(2, 20), new Point(250, 50));
         pathBlue.style = {
@@ -135,19 +135,19 @@
             var position = view.size * Point.random();
             var placed = symbol.place(position);
         }
-        
+
         (function () {
             var hamburger = {
                 navToggle: document.querySelector('.nav-toggle'),
                 nav: document.querySelector('nav'),
-        
+
                 doToggle: function (e) {
                     e.preventDefault();
                     this.navToggle.classList.toggle('expanded');
                     this.nav.classList.toggle('expanded');
                 }
             };
-        
+
             hamburger.navToggle.addEventListener('click', function (e) {
                 hamburger.doToggle(e);
             });
@@ -158,9 +158,9 @@
               e.stopPropagation();
             });
         }());
-        
-        
-       
+
+
+
     </script>
 
 </head>
@@ -169,6 +169,7 @@
     <div class="nav-big">
       <h3>
         <ul id="navList">
+            <li><a href="https://docs.google.com/spreadsheets/d/1RAPeTP1WurV57uwzm8YS9MRn2lnQ5XK9rRlfJ3cPYDc">schedule<img class="external-link" src="img/external.svg" alt="external link to the schedule"></a></li>
             <li><a href="about.html">about+FAQs</a></li>
             <li><a href="hack.html">hack</a></li>
             <li><a href="speak.html">speakers</a></li>
