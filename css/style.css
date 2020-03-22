@@ -179,6 +179,9 @@ hr {
     top: 85%;
     left: 5%;
     font-size: 1.6rem;
+    word-wrap: break-word;
+    margin-right: 8rem;
+
 }
 
 
@@ -374,7 +377,7 @@ a:active {
     }
 }
 
-@media only screen and (max-width: 600px) {
+@media only screen and (max-width: 700px) {
     .nav-big {
       display: none;
     }
@@ -396,7 +399,7 @@ a:active {
 }
     
 
-@media only screen and (max-width: 600px) {
+@media only screen and (max-width: 700px) {
     #navList-horizontal {
       display: none;
     }
@@ -405,14 +408,14 @@ a:active {
     }
 }
 
-@media only screen and (min-width: 601px) {
+@media only screen and (min-width: 701px) {
     .nav-mobile {
       display: none;
     }
     
 }
 
-  @media only screen and (min-width: 601px) {
+  @media only screen and (min-width: 701px) {
   .nav-big {
     margin-left: 80%;
     margin-right: 20%;
