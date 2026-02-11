@@ -1,4 +1,4 @@
 # ETHBerlinZwei
 ETHBerlin Zwei Website
 
-- https://ethberlinzwei.com/ 
+- https://2019.ethberlin.org/ 
