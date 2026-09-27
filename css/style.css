@@ -159,7 +159,7 @@ hr {
 
 #navList-horizontal a {
     float: left;
-    margin-left: 7%;
+    margin-left: 5%;
     padding: 12px;
     text-decoration: none;
     font-size: 1rem;
@@ -170,6 +170,12 @@ hr {
   .content {
     margin: 3rem;
 
+}
+
+.content iframe {
+    max-width: 100%;
+    height: auto;
+    aspect-ratio: 16 / 9;
 }
 
 .main-subtext {
@@ -236,6 +242,49 @@ img {
 
 .sponsor-t1 {
     width: 18rem;
+    max-width: 100%;
+}
+
+/* GRID: PHOTOS */
+
+.photos-day h6 {
+    color: blue;
+    text-align: center;
+    font-size: 2.5rem;
+}
+
+.photos-day h4 {
+    text-align: center;
+}
+
+.photos-grid {
+    display: grid;
+    grid-template-columns: repeat(4, 1fr);
+    gap: 10px;
+    padding: 10px;
+}
+
+.photos-grid img {
+    display: block;
+    width: 100%;
+    aspect-ratio: 3 / 2;
+    object-fit: cover;
+}
+
+@media only screen and (max-width: 850px) {
+    .photos-grid {
+        grid-template-columns: repeat(2, 1fr);
+    }
+}
+
+@media only screen and (max-width: 700px) {
+    .photos-day h6 {
+        font-size: 2rem;
+    }
+}
+
+.mfp-animated-image {
+    object-fit: cover;
 }
 
 
@@ -388,6 +437,7 @@ a:active {
         top: 80%;
         left: 5%;
         width: 350px;
+        max-width: 90%;
         word-wrap: break-word;
     }
     .grid-container, .grid-container-sponsor, .grid-container-sponsor-t1, .grid-container-sponsor-t4 {
@@ -422,5 +472,11 @@ a:active {
     margin-top: 70px;
     position:absolute;
     color:black;
+    }
+}
+
+@media only screen and (max-width: 389px) {
+    .title h6 {
+        font-size: 3.7rem;
     }
 }
